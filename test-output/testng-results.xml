@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="4" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="218239" started-at="2020-03-15T17:06:11Z" finished-at="2020-03-15T17:09:50Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="218239" started-at="2020-03-15T17:06:11Z" finished-at="2020-03-15T17:09:50Z">
+      <class name="AppiumFramework.AppiumFramework.AppiumTest">
+        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="BeforeSuite" is-config="true" duration-ms="184" started-at="2020-03-15T17:06:11Z" finished-at="2020-03-15T17:06:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeSuite -->
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="BeforeClass" is-config="true" duration-ms="2023" started-at="2020-03-15T17:06:11Z" finished-at="2020-03-15T17:06:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="BeforeTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="BeforeTest" is-config="true" duration-ms="81818" started-at="2020-03-15T17:06:14Z" finished-at="2020-03-15T17:07:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=FirstTest status=FAILURE method=AppiumTest.FirstTest()[pri:1, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="FAIL" signature="FirstTest()[pri:1, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="FirstTest" duration-ms="7411" started-at="2020-03-15T17:07:36Z" finished-at="2020-03-15T17:07:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Not Found expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Not Found expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at AppiumFramework.AppiumFramework.AppiumTest.FirstTest(AppiumTest.java:13)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FirstTest -->
+        <test-method status="PASS" signature="AfterTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="AfterTest" is-config="true" duration-ms="2677" started-at="2020-03-15T17:07:43Z" finished-at="2020-03-15T17:07:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=FirstTest status=FAILURE method=AppiumTest.FirstTest()[pri:1, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="BeforeTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="BeforeTest" is-config="true" duration-ms="32110" started-at="2020-03-15T17:07:46Z" finished-at="2020-03-15T17:08:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SecondTest status=SUCCESS method=AppiumTest.SecondTest()[pri:2, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="SecondTest()[pri:2, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="SecondTest" duration-ms="6816" started-at="2020-03-15T17:08:18Z" finished-at="2020-03-15T17:08:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SecondTest -->
+        <test-method status="PASS" signature="AfterTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="AfterTest" is-config="true" duration-ms="358" started-at="2020-03-15T17:08:25Z" finished-at="2020-03-15T17:08:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SecondTest status=SUCCESS method=AppiumTest.SecondTest()[pri:2, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="BeforeTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="BeforeTest" is-config="true" duration-ms="36815" started-at="2020-03-15T17:08:25Z" finished-at="2020-03-15T17:09:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ThirdTest status=SUCCESS method=AppiumTest.ThirdTest()[pri:3, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="ThirdTest()[pri:3, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="ThirdTest" duration-ms="6614" started-at="2020-03-15T17:09:02Z" finished-at="2020-03-15T17:09:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ThirdTest -->
+        <test-method status="PASS" signature="AfterTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="AfterTest" is-config="true" duration-ms="324" started-at="2020-03-15T17:09:09Z" finished-at="2020-03-15T17:09:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ThirdTest status=SUCCESS method=AppiumTest.ThirdTest()[pri:3, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="BeforeTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="BeforeTest" is-config="true" duration-ms="33693" started-at="2020-03-15T17:09:09Z" finished-at="2020-03-15T17:09:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ForthTest status=SUCCESS method=AppiumTest.ForthTest()[pri:4, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="ForthTest()[pri:4, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="ForthTest" duration-ms="6593" started-at="2020-03-15T17:09:43Z" finished-at="2020-03-15T17:09:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ForthTest -->
+        <test-method status="PASS" signature="AfterTest(org.testng.ITestResult)[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="AfterTest" is-config="true" duration-ms="487" started-at="2020-03-15T17:09:49Z" finished-at="2020-03-15T17:09:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ForthTest status=SUCCESS method=AppiumTest.ForthTest()[pri:4, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="AfterClass" is-config="true" duration-ms="6" started-at="2020-03-15T17:09:50Z" finished-at="2020-03-15T17:09:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterClass -->
+        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:AppiumFramework.AppiumFramework.AppiumTest@fd07cbb]" name="AfterSuite" is-config="true" duration-ms="1263" started-at="2020-03-15T17:09:50Z" finished-at="2020-03-15T17:09:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSuite -->
+      </class> <!-- AppiumFramework.AppiumFramework.AppiumTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
