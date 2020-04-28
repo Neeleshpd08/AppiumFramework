@@ -74,7 +74,7 @@ public class GetData {
 				List<String> col = GetColumnValue(sheet);
 				List<String> row = GetRowValue(sheet,TestcaseName);
 				map = new HashMap<String,String>();
-				for (int j = 0; j < col.size(); j++) {
+				for (int j = 0; j < row.size(); j++) {
 					map.put(col.get(j),row.get(j));
 				}
 			}
