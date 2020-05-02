@@ -27,7 +27,7 @@ public class TestBase extends GenericReport {
 	AppiumDriverLocalService service=null;
 	DesiredCapabilities cap=null;
 	public HashMap<String,String> data;
-	private String Excelpath = "//Resources//TestData.xlsx";
+	private String Excelpath = "\\Resources\\TestData.xlsx";
 	GetData ExcelData=new GetData(Excelpath);
 
 	public DesiredCapabilities InitializeCapabilities() {
@@ -44,7 +44,7 @@ public class TestBase extends GenericReport {
 			cap.setCapability(MobileCapabilityType.APP,fs.getAbsolutePath());
 		}
 		catch(IOException ex) {
-			Log(ex.getMessage());
+			Log(status.Fail,ex.getMessage());
 		}
 		return cap;
 	}
@@ -55,7 +55,7 @@ public class TestBase extends GenericReport {
 			driver=new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		}catch(Exception ex) {
-			Log(ex.getMessage());
+			Log(status.Fail,ex.getMessage());
 		}
 		return driver;
 	}
@@ -65,10 +65,10 @@ public class TestBase extends GenericReport {
 		if(!flag) {
 			service = AppiumDriverLocalService.buildDefaultService();
 			service.start();
-			Log("Appium server launched");
+			Log(status.Pass,"Appium server launched");
 		}
 		else {
-			Log("Server is in running mode");
+			Log(status.Pass,"Server is in running mode");
 		}
 	}
 
@@ -103,7 +103,8 @@ public class TestBase extends GenericReport {
 
 	@BeforeMethod
 	public void BeforeTest(ITestResult result) throws InterruptedException, IOException {
-		data = ExcelData.GetDataByTestCase("Data", result.getMethod().getMethodName());
+		String testName = result.getMethod().getMethodName();
+		data = ExcelData.GetDataByTestCase("Data", testName);
 		CreateTest(result.getMethod().getMethodName());
 		try {
 			Process Pkill = Runtime.getRuntime().exec("taskkill /F /IM node.exe");
@@ -112,7 +113,7 @@ public class TestBase extends GenericReport {
 			System.out.println("Destroy all Nodejs task/server");
 		}
 		catch(Exception ex) {
-			Log("Appium Server is running"+ex.getMessage());
+			Log(status.Fail,"Appium Server is running"+ex.getMessage());
 		}
 		Thread.sleep(2000);
 		StartServer();
@@ -136,7 +137,7 @@ public class TestBase extends GenericReport {
 			GenericReport.test.log(Status.PASS, "TestCase Passed is:"+result.getName());
 		}
 		driver.closeApp();
-		Log("Appium server stop");
+		Log(status.Pass,"Appium server stop");
 		service.stop();
 	}
 
@@ -152,7 +153,7 @@ public class TestBase extends GenericReport {
 			FileUtils.copyFile(source,finalDestination);
 		}
 		catch(Exception ex) {
-			Log("Screenshot is not generated "+ex.getMessage());
+			Log(status.Fail,"Screenshot is not generated "+ex.getMessage());
 		}
 		return destination;
 	}

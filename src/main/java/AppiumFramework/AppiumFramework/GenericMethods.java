@@ -2,13 +2,10 @@ package AppiumFramework.AppiumFramework;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.StaleElementReferenceException;
-
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -48,7 +45,7 @@ public class GenericMethods{
 		}
 		catch (Exception ex)
 		{
-			report.Log("Exception:"+ex.getMessage());
+			report.Log(status.Fail,"Exception:"+ex.getMessage());
 		}
 	}
 
@@ -66,7 +63,7 @@ public class GenericMethods{
 		}
 		catch (Exception ex)
 		{
-			report.Log(this.control_name + " not found!");
+			report.Log(status.Fail,this.control_name + " not found!");
 		}
 		return element;
 	}
@@ -86,7 +83,7 @@ public class GenericMethods{
 				}
 				element.click();
 				IsSuccessfull = true;
-				report.Log("Clicked on " + this.control_name);
+				report.Log(status.Pass,"Clicked on " + this.control_name);
 				break;
 			}
 			catch (StaleElementReferenceException st)
@@ -106,7 +103,7 @@ public class GenericMethods{
 			}
 		}
 		if (i == 200)
-			report.Log("Not able to click on"+this.control_name+"element.\n\n");
+			report.Log(status.Fail,"Not able to click on"+this.control_name+"element.\n\n");
 	}
 
 	public void SetText(String text) {
@@ -115,7 +112,7 @@ public class GenericMethods{
            {
                element.clear();
                element.sendKeys(text);
-               report.Log("Setting text '" + text + "' in " + this.control_name);
+               report.Log(status.Pass,"Setting text '" + text + "' in " + this.control_name);
            }
            catch (InvalidElementStateException ex)
            {

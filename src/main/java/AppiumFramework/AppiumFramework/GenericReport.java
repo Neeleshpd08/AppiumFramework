@@ -19,27 +19,29 @@ public class GenericReport {
 	
 	public void GenerateReport() {
 		htmlReporter = new ExtentHtmlReporter(destination);
-		htmlReporter.config().setDocumentTitle("Appium Automation Report");
+		htmlReporter.config().setDocumentTitle("Automation Report");
 		htmlReporter.config().setReportName("Appium Report");
 		htmlReporter.config().setTheme(Theme.DARK);
 		
 		extent=new ExtentReports();
 		extent.attachReporter(htmlReporter);
-		
-		extent.setSystemInfo("HostName", "LocalHost");
-		extent.setSystemInfo("OS", "Windows 10");
-		extent.setSystemInfo("Tester Name", "Neelesh");
-		extent.setSystemInfo("DeviceName", "Emulator");
+		extent.setSystemInfo("OS", System.getProperty("os.name"));
+		extent.setSystemInfo("Tester Name", System.getProperty("user.name"));
 	}
 	
 	public void CreateTest(String testCaseName) {
-		System.out.println(testCaseName);
 		test = extent.createTest(testCaseName);
 	}
 	
-	public void Log(String description) {
-		System.out.println(description);
-		test.log(Status.PASS, description);
+	public void Log(Object status,String description) {
+		if(status.toString() == "Fail") {		
+			test.log(Status.FAIL, description);
+		}else if(status.toString() == "Skip") {
+			test.log(Status.SKIP, description);
+		}
+		else {
+			test.log(Status.PASS, description);
+		}
 	}
 	
 	public void FlushReport() {
